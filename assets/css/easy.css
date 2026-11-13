@@ -1,0 +1,97 @@
+/* Easy mode for creators (2026-10-30)
+ * One clear next action, big tap targets (48px+), short labels with icons,
+ * and the earning loop shown as pictures. */
+
+/* Greeting */
+.ez-hello { margin: 0 0 14px; }
+.ez-hello h1 { margin: 0 0 4px; font-size: 1.55rem; line-height: 1.2; letter-spacing: -.01em; }
+.ez-hello p { margin: 0; color: var(--ui-muted); }
+
+/* Your next step */
+.ez-next { position: relative; background: linear-gradient(180deg, #fff 0%, #fffaf3 100%); border: 2px solid var(--ui-caramel); border-radius: 18px; padding: 18px; margin: 0 0 16px; box-shadow: 0 6px 22px rgba(168, 100, 44, .12); }
+.ez-next__top { display: flex; gap: 14px; align-items: flex-start; }
+.ez-next__ico { flex: none; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--ui-accent); color: #fff; }
+.ez-next__ico svg { width: 24px; height: 24px; }
+.ez-next__txt { min-width: 0; }
+.ez-next__kicker { display: block; font-size: .8125rem; font-weight: 700; letter-spacing: .06em; text-transform: none; color: var(--ui-accent); margin-bottom: 2px; }
+.ez-next h2 { margin: 0 0 4px; font-size: 1.25rem; line-height: 1.25; }
+.ez-next p { margin: 0; color: var(--ui-text-2); line-height: 1.5; }
+.ez-dots { display: flex; gap: 6px; margin: 14px 0 0; }
+.ez-dots i { flex: 1; height: 6px; border-radius: 99px; background: var(--ui-line); }
+.ez-dots i.is-done { background: var(--ui-ok); }
+.ez-dots i.is-now { background: var(--ui-caramel); }
+.ez-next__btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 54px; margin-top: 14px; padding: 12px 18px; border-radius: 14px; background: var(--ui-espresso); color: #fff !important; font-weight: 700; font-size: 1.05rem; text-decoration: none !important; transition: transform .12s ease, background .12s ease; }
+.ez-next__btn:hover { background: #33231a; }
+.ez-next__btn:active { transform: scale(.98); }
+.ez-next__btn svg { width: 20px; height: 20px; }
+.ez-next__all { margin-top: 12px; border-top: 1px solid var(--ui-line); padding-top: 10px; }
+.ez-next__all summary { cursor: pointer; font-weight: 600; color: var(--ui-accent); font-size: .92rem; padding: 6px 0; list-style: none; }
+.ez-next__all summary::-webkit-details-marker { display: none; }
+.ez-next__all summary::after { content: " \25BE"; }
+.ez-next__all[open] summary::after { content: " \25B4"; }
+.ez-next__all .ui-step { padding: 12px 0; }
+
+/* Campaigns on home */
+.ez-camps__list { list-style: none; margin: 0; padding: 0; }
+.ez-camp { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-top: 1px solid var(--ui-line); color: inherit !important; text-decoration: none !important; min-height: 72px; }
+.ez-camp:hover { background: var(--ui-surface-2); }
+.ez-camp img { flex: none; width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--ui-sunken); }
+.ez-camp__txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ez-camp__txt strong { font-size: .98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ez-camp__txt small { color: var(--ui-muted); font-size: .84rem; }
+.ez-camp__go { flex: none; display: inline-flex; align-items: center; gap: 2px; padding: 8px 10px 8px 14px; border-radius: 99px; background: var(--ui-espresso); color: #fff; font-weight: 600; font-size: .86rem; }
+.ez-camp__go.is-joined { background: var(--ui-ok-soft); color: var(--ui-ok); }
+.ez-camp__go svg { width: 16px; height: 16px; }
+.ez-more { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 14px; border-top: 1px solid var(--ui-line); font-weight: 600; }
+.ez-more svg { width: 16px; height: 16px; }
+
+/* How you earn, in 4 steps */
+.ez-how { margin: 0 0 20px; }
+.ez-how h2 { font-size: 1.05rem; margin: 0 0 10px; }
+.ez-how ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.ez-how li { background: var(--ui-surface); border: 1px solid var(--ui-line); border-radius: 14px; padding: 14px 12px; display: flex; flex-direction: column; gap: 4px; }
+.ez-how li.is-now { border: 2px solid var(--ui-caramel); background: #fffaf3; }
+.ez-how li.is-done { opacity: .62; }
+.ez-how__ico { position: relative; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--ui-accent-soft); color: var(--ui-accent); margin-bottom: 4px; }
+.ez-how__ico svg { width: 22px; height: 22px; }
+.ez-how__ico b { position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%; background: var(--ui-espresso); color: #fff; font-size: .8125rem; display: grid; place-items: center; }
+.ez-how li.is-done .ez-how__ico b { background: var(--ui-ok); }
+.ez-how strong { font-size: .92rem; }
+.ez-how small { color: var(--ui-muted); font-size: .8125rem; line-height: 1.4; }
+
+/* Compact picture strip (campaigns + footage pages) */
+.ez-strip { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; counter-reset: ez; }
+.ez-strip li { counter-increment: ez; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; font-size: .8125rem; font-weight: 600; color: var(--ui-text-2); line-height: 1.25; }
+.ez-strip li span { position: relative; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--ui-surface); border: 1px solid var(--ui-line); color: var(--ui-accent); }
+.ez-strip li span::after { content: counter(ez); position: absolute; top: -4px; right: -4px; width: 18px; height: 18px; border-radius: 50%; background: var(--ui-espresso); color: #fff; font-size: .66rem; display: grid; place-items: center; }
+.ez-strip svg { width: 20px; height: 20px; }
+
+/* Campaign card call to action */
+.ez-cardcta { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; min-height: 44px; border-radius: 12px; background: var(--ui-espresso); color: #fff; font-weight: 700; font-size: .95rem; }
+.ez-cardcta.is-joined { background: var(--ui-ok); }
+.ez-cardcta.is-off { background: var(--ui-sunken); color: var(--ui-muted); }
+.ez-cardcta svg { width: 18px; height: 18px; }
+
+/* Footage page */
+.ez-flist { list-style: none; margin: 0; padding: 0; }
+.ez-fitem { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-top: 1px solid var(--ui-line); }
+.ez-fitem__ico { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--ui-espresso); color: var(--ui-caramel); }
+.ez-fitem__ico svg { width: 22px; height: 22px; }
+.ez-fitem__txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ez-fitem__txt small { color: var(--ui-muted); font-size: .84rem; }
+.ez-fitem .btn { flex: none; }
+.ez-tag { display: inline-block; padding: 3px 9px; border-radius: 99px; background: var(--ui-sunken); color: var(--ui-muted); font-size: .8125rem; font-weight: 600; white-space: nowrap; }
+.ez-tag--ok { background: var(--ui-ok-soft); color: var(--ui-ok); margin-right: 4px; }
+
+/* Bigger, easier taps in the menu */
+body.ui .sidebar-nav .sidebar-tab { min-height: 44px; }
+
+@media (max-width: 640px) {
+    .ez-how ol { grid-template-columns: 1fr 1fr; }
+    .ez-hello h1 { font-size: 1.35rem; }
+    .ez-camp, .ez-fitem { padding: 12px 16px; }
+    .ez-fitem { flex-wrap: wrap; }
+    .ez-fitem__txt { flex: 1 1 calc(100% - 56px); }
+    .ez-fitem .btn, .ez-fitem .ez-tag { margin-left: 56px; }
+}
+@media (min-width: 900px) { .ez-next__btn { max-width: 380px; } }

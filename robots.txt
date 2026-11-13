@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /creator/
+Disallow: /api/
+Disallow: /cron/
+Disallow: /includes/
+Disallow: /storage/
+Disallow: /google_auth.php
+Disallow: /tiktok_auth.php
+Disallow: /reset_password.php
+
+Sitemap: https://golddetectorinzambia.com/sitemap.xml

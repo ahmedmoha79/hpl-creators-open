@@ -1,0 +1,69 @@
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_value error_log "/data0/magnetor9000.com/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+<IfModule lsapi_module>
+   php_value error_log "/data0/magnetor9000.com/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# BEGIN HPL security hardening (2026-10-26)
+# Stop folder contents from being listed to visitors
+Options -Indexes
+# Never serve backups, database dumps, logs, env/config files, notes, or any hidden file (name starting with a dot)
+<FilesMatch "(\.(zip|sql|bak|log|env|ini|sh|md|yml|yaml|lock|dist|old|orig|swp|tar|gz|7z|rar|dump|phps)|^\..*)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+# END HPL security hardening
+# BEGIN HPL headers, caching and error page (2026-10-27)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  # Extra browser protection that cannot break pages: no plugins, no <base> tricks,
+  # other sites cannot show these pages inside a frame, and old http:// links load over https.
+  Header always set Content-Security-Policy "object-src 'none'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType image/vnd.microsoft.icon "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 30 days"
+</IfModule>
+ErrorDocument 404 /404.php
+# END HPL headers, caching and error page
+
+# Home-screen app: manifest type, and always check for a new service worker
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "^sw\.js$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

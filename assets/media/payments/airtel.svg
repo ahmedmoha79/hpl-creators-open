@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" role="img" aria-labelledby="airtelTitle">
+  <title id="airtelTitle">Airtel Money</title>
+  <path d="M42 27c40-15 92-15 135 2" fill="none" stroke="#e40000" stroke-width="9" stroke-linecap="round"/>
+  <text x="6" y="78" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="-3" fill="#e40000">airtel</text>
+</svg>

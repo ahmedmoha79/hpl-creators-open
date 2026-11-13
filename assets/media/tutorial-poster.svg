@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" width="720" height="1280">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0" stop-color="#33241c"/><stop offset=".55" stop-color="#241812"/><stop offset="1" stop-color="#170f0b"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#e8c56a"/><stop offset="1" stop-color="#b8922a"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1280" fill="url(#bg)"/>
+  <g font-family="'Courier New',monospace" font-size="17" letter-spacing="3" fill="#c58a52">
+    <text x="48" y="124">HPL CREATOR ACADEMY</text>
+    <text x="672" y="124" text-anchor="end" fill="#d8c7b2">TUTORIALS</text>
+  </g>
+  <line x1="48" y1="143" x2="672" y2="143" stroke="#c58a52" stroke-opacity=".6"/>
+  <text x="360" y="432" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="74" fill="url(#gold)">HPL</text>
+  <text x="360" y="458" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" letter-spacing="1" fill="#d8c7b2">HAYATI PROSPECTORS</text>
+  <text x="360" y="474" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" letter-spacing="1" fill="#d8c7b2">LIMITED</text>
+  <text x="360" y="540" text-anchor="middle" font-family="'Courier New',monospace" font-size="24" letter-spacing="8" fill="#c58a52">9 SHORT LESSONS</text>
+  <line x1="220" y1="563" x2="500" y2="563" stroke="#c58a52" stroke-opacity=".7"/>
+  <g text-anchor="middle" font-family="'Arial Black','Montserrat',Arial,sans-serif" font-weight="900">
+    <text x="360" y="634" font-size="50" fill="#f6f0e6">LEARN HOW TO</text>
+    <text x="360" y="690" font-size="50" fill="#f6f0e6">CLIP &amp; EARN</text>
+    <text x="360" y="772" font-size="80" fill="#e2ad7b">WITH HPL</text>
+  </g>
+  <text x="360" y="900" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="38" fill="#e2ad7b">“I could have made that.”</text>
+  <text x="360" y="952" text-anchor="middle" font-family="'Courier New',monospace" font-size="19" letter-spacing="6" fill="#c58a52">PRESS PLAY TO START</text>
+  <line x1="48" y1="1100" x2="672" y2="1100" stroke="#c58a52" stroke-opacity=".6"/>
+</svg>

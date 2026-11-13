@@ -1,0 +1,102 @@
+/* =========================================================================
+   Dark mode (2026-11-09). Turned on by includes/theme.php, which sets
+   <html data-theme="dark"> when the phone/computer is in dark mode (or the
+   person picked Dark on Profile). Warm espresso tones, gold stays gold.
+   Selectors start with :root[data-theme="dark"] so they win over page CSS
+   that loads later.
+   ========================================================================= */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    /* ui.css tokens */
+    --ui-bg: #14100d;
+    --ui-surface: #1e1814;
+    --ui-surface-2: #241d18;
+    --ui-sunken: #2a221c;
+    --ui-line: #352b23;
+    --ui-line-strong: #4a3c31;
+    --ui-text: #f4ece4;
+    --ui-text-2: #d9cbbd;
+    --ui-muted: #a8988a;
+    --ui-accent: #e8a468;
+    --ui-accent-soft: #3a2a1d;
+    --ui-caramel: #e8b582;
+    --ui-espresso: #0b0806;
+    --ui-ok: #5fd39a;   --ui-ok-soft: #173325;
+    --ui-warn: #f2b14f; --ui-warn-soft: #36280f;
+    --ui-bad: #ff8a80;  --ui-bad-soft: #3d1b18;
+    --ui-info: #7cbdf0; --ui-info-soft: #16283b;
+    --ui-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+    --ui-shadow-lg: 0 14px 36px rgba(0, 0, 0, .55);
+    /* older tokens (style.css / brand.css) */
+    --bg: #14100d; --bg-soft: #2a221c; --panel: #1e1814; --panel-2: #241d18;
+    --line: #352b23; --text: #f4ece4; --muted: #a8988a; --accent: #e8a468;
+    --ink: #f4ece4; --navy: #0b0806; --navy-2: #2a221c;
+    --hpl-cream: #241d18; --hpl-cream-dim: #a8988a;
+    --shadow: 0 18px 50px rgba(0, 0, 0, .5);
+    /* home.css */
+    --hk-ink: #2a1f17;      /* dark cards (wallet, profile) and the text on gold buttons */
+    --hk-ink-2: #382a1f;
+    --hk-gold-deep: #f2c14e;
+    --hk-up: #5fd39a;
+    --hk-up-soft: #173325;
+    --hk-card: #1e1814;
+    --hk-muted: #a8988a;
+    --hk-line: #352b23;
+}
+/* direct messages (their colours sit on .dm) */
+:root[data-theme="dark"] .dm { --dm-mine: #4a3322; --dm-mine-text: #fbf3e8; --dm-theirs: #241d18; --dm-canvas: #14100d; }
+:root[data-theme="dark"] body { background: var(--ui-bg); color: var(--ui-text); }
+
+/* Top bar (phone and computer) */
+:root[data-theme="dark"] .hplbar {
+    --tb-bg: #14100d; --tb-panel: #1e1814; --tb-line: #2c241e; --tb-line-soft: #2c241e;
+    --tb-hover: #2a221c; --tb-chip: #241d18; --tb-text: #f4ece4; --tb-muted: #a8988a; --tb-muted-2: #8f8173;
+    background: rgba(20, 16, 13, .96);
+    border-bottom-color: #2c241e;
+}
+
+/* Form fields */
+:root[data-theme="dark"] :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]), select, textarea) {
+    background-color: var(--ui-sunken);
+    color: var(--ui-text);
+    border-color: var(--ui-line-strong);
+}
+:root[data-theme="dark"] ::placeholder { color: #8f8173; }
+
+/* Images that are pictures stay as they are; plain logos with dark ink get lifted a little */
+:root[data-theme="dark"] img { color-scheme: normal; }
+
+/* Home / clip / profile: --hk-ink is a dark card colour, so text that used it turns light */
+:root[data-theme="dark"] :is(.hk-next p b, a.hk-tile, .hk-tile__money, a.hk-rank, a.hk-pulse, a.hk-learn, .hk-rank__txt strong, a.pf-link, .pf-link__txt strong, .hk-btn--light, .hk-chip, .hk-tile__tag:not(.hk-tile__tag--ms)) { color: var(--ui-text); }
+:root[data-theme="dark"] .hk-ring text { fill: var(--ui-text); }
+:root[data-theme="dark"] .hk-chip.is-on { background: var(--hk-gold); color: #1b1511; border-color: var(--hk-gold); }
+:root[data-theme="dark"] .hk-days li.is-today span { box-shadow: inset 0 0 0 2px var(--hk-gold); }
+:root[data-theme="dark"] .hk-tile__tag--ms, :root[data-theme="dark"] .hk-btn--gold { color: #1b1511; }
+:root[data-theme="dark"] :is(.hk-wallet.ui-live, .pf-hero) { box-shadow: inset 0 0 0 1px rgba(242, 193, 78, .14); }
+
+/* Chips that say "Coming soon" */
+:root[data-theme="dark"] .soon-chip { color: var(--ui-muted); }
+
+/* Pastel avatar circles in messages: deeper so they do not glare */
+:root[data-theme="dark"] .dm-av { filter: brightness(.78) saturate(1.1); }
+
+/* Admin community page */
+:root[data-theme="dark"] .acm-hero { background: #261c15; box-shadow: inset 0 0 0 1px rgba(242, 193, 78, .14); }
+:root[data-theme="dark"] .acm-msg.is-team { background: #2b2114; }
+:root[data-theme="dark"] .acm-edit { background: #2b2114; }
+:root[data-theme="dark"] :is(.acm-chat, .acm-card) .acm-btn--dark { background: #3a2a1d; }
+
+/* Sticker picker and stickers: keep stickers bright, panels dark */
+:root[data-theme="dark"] .stk__buy { color: #1b1511; }
+
+/* Bottom bar: solid, so light text under it never shows through */
+:root[data-theme="dark"] body.ui .mobile-dock { background: #1a1511; border-top-color: #2c241e; box-shadow: 0 -6px 20px rgba(0, 0, 0, .45); }
+/* Gold "5K+ views" tags keep their gold */
+:root[data-theme="dark"] .hk-tile__tag.hk-tile__tag--ms { background: var(--hk-gold); color: #1b1511; }
+/* Red / green buttons from style.css (colours live in --btn-* there) */
+:root[data-theme="dark"] .btn--danger { --btn-bg: rgba(248, 113, 113, .14); --btn-fg: #ff9b93; border-color: rgba(248, 113, 113, .45); }
+:root[data-theme="dark"] .btn--ok { --btn-bg: rgba(74, 222, 128, .12); --btn-fg: #7ee0a6; border-color: rgba(74, 222, 128, .4); }
+/* Logo preview on Admin > Branding stays light on purpose (shows the logo as on a light page) */
+:root[data-theme="dark"] .panel__body > div[style*="dashed"] .muted { color: #6b5d50; }
+/* Person card in the chat (2026-11-12): the main button in gold so it stands out on the dark card */
+:root[data-theme="dark"] .hc-person a.hc-person__btn--main { background: var(--ui-caramel); color: #1e140f; }

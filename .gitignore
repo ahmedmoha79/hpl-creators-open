@@ -1,0 +1,14 @@
+# Server-only files: never in git, never deployed or deleted by deploys
+config.php
+.user.ini
+php.ini
+storage/
+uploads/
+database/
+assets/media/**/*.mp4
+_dev_login.php
+.ftp-deploy-sync-state.json
+!assets/media/home/*.mp4
+
+store/config.local.php
+store/uploads/

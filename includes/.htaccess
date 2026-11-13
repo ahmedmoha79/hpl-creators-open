@@ -1,0 +1,7 @@
+# PHP helpers are loaded by the pages; they are never opened directly.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Deny from all
+</IfModule>

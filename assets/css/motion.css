@@ -1,0 +1,63 @@
+/* =========================================================================
+   Motion (2026-11-09): small animations that make the app feel alive.
+   Only opacity and transform (cheap for the phone, nothing for the server),
+   each plays once or answers a tap. Turned off when the phone asks for less motion.
+   ========================================================================= */
+@media (prefers-reduced-motion: no-preference) {
+
+    /* Arriving on a page: the content settles in once, top to bottom. */
+    .app__content > :is(div, section, form, h1, header, nav, p, .panel, .ui-card) { animation: mIn .42s cubic-bezier(.2, .8, .2, 1) backwards; }
+    .app__content > :nth-child(2) { animation-delay: .03s; }
+    .app__content > :nth-child(3) { animation-delay: .06s; }
+    .app__content > :nth-child(4) { animation-delay: .09s; }
+    .app__content > :nth-child(n+5) { animation-delay: .12s; }
+    .hk > :is(div, section, a, form) { animation: mIn .45s cubic-bezier(.2, .8, .2, 1) backwards; }
+    .hk > :nth-child(3) { animation-delay: .04s; }
+    .hk > :nth-child(4) { animation-delay: .08s; }
+    .hk > :nth-child(5) { animation-delay: .12s; }
+    .hk > :nth-child(6) { animation-delay: .16s; }
+    .hk > :nth-child(n+7) { animation-delay: .2s; }
+
+    /* Switching tabs */
+    .tab-panel:not(.hide) { animation: mFade .25s ease both; }
+
+    /* Buttons answer a press */
+    :is(.btn, .ui-btn, .hk-btn, .hk-chip, .stk__buy, .cmx-btn, .camp-join-modal__cta, button[type="submit"]) { transition: transform .12s ease, background-color .15s ease, box-shadow .15s ease; }
+    :is(.btn, .ui-btn, .hk-btn, .hk-chip, .stk__buy, .cmx-btn, .camp-join-modal__cta, button[type="submit"]):active { transform: scale(.96); }
+    .mobile-dock__item:active .mobile-dock__ico { transform: scale(.88); }
+
+    /* Bottom bar: the open tab's icon gives a small bounce */
+    .mobile-dock__item.is-active .mobile-dock__ico { animation: mBounce .55s cubic-bezier(.3, 1.6, .5, 1) both; }
+
+    /* New badges pop in, the bell rings once when something is waiting */
+    .hplbar__badge:not(.is-empty) { animation: mPop .45s cubic-bezier(.3, 1.6, .5, 1) both .3s; }
+    .hplbar__badge:not(.is-empty) + .ico, a:has(> .hplbar__badge:not(.is-empty)) > .ico { animation: mRing 1s ease .5s both; transform-origin: 50% 10%; }
+
+    /* Progress bars fill up */
+    :is(.ui-live__bar, .cl-ms__bar, .ui-progress, .camp-progress) > span { animation: mGrow .9s cubic-bezier(.2, .8, .2, 1) .15s both; transform-origin: left center; }
+
+    /* Messages from the app slide down */
+    .flash, .ui-flash { animation: mDrop .4s cubic-bezier(.2, .8, .2, 1) both; }
+
+    /* Things you can open lift slightly under the mouse */
+    @media (hover: hover) {
+        :is(.camp-card, .ui-card--link, .hk-tile, .pf-link, .hk-rank, .hk-pulse, .hk-learn, .hk-next, .cmx-post) { transition: transform .2s ease, box-shadow .2s ease; }
+        :is(.camp-card, .hk-rank, .hk-pulse, .hk-learn, .hk-next):hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(30, 20, 15, .08); }
+        .hk-tile:hover .hk-tile__pic { transform: translateY(-3px); }
+        .hk-tile__pic { transition: transform .2s ease; }
+        .camp-card:hover img { transform: scale(1.04); }
+        .camp-card img { transition: transform .4s ease; }
+    }
+
+    /* Money that just changed glows for a moment (live updates add .is-up) */
+    .ui-live__amount.is-up, [data-clip].is-up [data-clip-earned] { animation: mGlow 1.2s ease; }
+}
+
+@keyframes mIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes mFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes mBounce { 0% { transform: scale(.7); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+@keyframes mPop { 0% { transform: scale(0); } 70% { transform: scale(1.25); } 100% { transform: scale(1); } }
+@keyframes mRing { 0%, 100% { transform: rotate(0); } 15% { transform: rotate(14deg); } 30% { transform: rotate(-12deg); } 45% { transform: rotate(8deg); } 60% { transform: rotate(-5deg); } 75% { transform: rotate(2deg); } }
+@keyframes mGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes mDrop { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+@keyframes mGlow { 0% { text-shadow: 0 0 0 rgba(242, 193, 78, 0); } 30% { text-shadow: 0 0 22px rgba(242, 193, 78, .8); } 100% { text-shadow: 0 0 0 rgba(242, 193, 78, 0); } }

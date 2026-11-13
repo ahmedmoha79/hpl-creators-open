@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+<symbol id="s" viewBox="0 0 56 58"><rect width="56" height="58" fill="#f7dcb6"/><circle cx="44" cy="13" r="6" fill="#f2a93b"/><path d="M0 40 Q16 30 30 36 T56 34 V58 H0Z" fill="#c98a4b"/><circle cx="22" cy="24" r="3.4" fill="#2a1d14"/><path d="M22 27.5 V38 M22 31 L29 35 M22 38 L19 46 M22 38 L25 46" stroke="#2a1d14" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M29 35 L35 45" stroke="#2a1d14" stroke-width="2" stroke-linecap="round"/><ellipse cx="36.5" cy="46.5" rx="4.5" ry="2" fill="#2a1d14"/></symbol>
+<g id="a"><circle r="34" fill="#c98a4b"/><path d="M-14 0 H12 M2 -12 L14 0 L2 12" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+</defs>
+<rect width="1600" height="900" fill="#fbf4ea"/>
+<g transform="translate(250 330)">
+<rect width="380" height="240" rx="16" fill="#2a1d14"/>
+<g fill="#fbf4ea"><rect x="16" y="12" width="16" height="12" rx="3"/><rect x="56" y="12" width="16" height="12" rx="3"/><rect x="96" y="12" width="16" height="12" rx="3"/><rect x="136" y="12" width="16" height="12" rx="3"/><rect x="176" y="12" width="16" height="12" rx="3"/><rect x="216" y="12" width="16" height="12" rx="3"/><rect x="256" y="12" width="16" height="12" rx="3"/><rect x="296" y="12" width="16" height="12" rx="3"/><rect x="336" y="12" width="16" height="12" rx="3"/><rect x="16" y="216" width="16" height="12" rx="3"/><rect x="56" y="216" width="16" height="12" rx="3"/><rect x="96" y="216" width="16" height="12" rx="3"/><rect x="136" y="216" width="16" height="12" rx="3"/><rect x="176" y="216" width="16" height="12" rx="3"/><rect x="216" y="216" width="16" height="12" rx="3"/><rect x="256" y="216" width="16" height="12" rx="3"/><rect x="296" y="216" width="16" height="12" rx="3"/><rect x="336" y="216" width="16" height="12" rx="3"/></g>
+<use href="#s" x="20" y="40" width="160" height="160"/><use href="#s" x="200" y="40" width="160" height="160"/>
+</g>
+<use href="#a" x="700" y="450"/>
+<g transform="translate(780 250)">
+<rect width="230" height="400" rx="34" fill="#2a1d14"/>
+<svg x="16" y="30" width="198" height="330" viewBox="0 0 56 58" preserveAspectRatio="xMidYMid slice"><use href="#s"/></svg>
+<circle cx="115" cy="195" r="34" fill="rgba(0,0,0,.45)"/><path d="M103 176 L135 195 L103 214Z" fill="#fff"/>
+<rect x="90" y="374" width="50" height="8" rx="4" fill="#6b5a4b"/>
+</g>
+<use href="#a" x="1080" y="450"/>
+<g transform="translate(1150 380)">
+<rect width="220" height="140" rx="18" fill="#2f8f5b"/>
+<circle cx="110" cy="70" r="40" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="8"/>
+<text x="110" y="88" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="800" fill="#fff">K</text>
+</g>
+</svg>

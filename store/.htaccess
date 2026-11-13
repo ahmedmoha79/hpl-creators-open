@@ -1,0 +1,62 @@
+# HPL Store (minelabzambia.com; gpz7000africa.com shows the same site, canonical links point to minelabzambia.com)
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# This folder is also reachable through the creators domain; send those visitors to the store domain.
+RewriteCond %{HTTP_HOST} golddetectorinzambia\.com$ [NC]
+RewriteRule ^(.*)$ https://minelabzambia.com/$1 [R=301,L]
+
+# Always HTTPS, without www.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Our videos only play inside this website: no direct downloads or other sites embedding them.
+RewriteCond %{REQUEST_URI} \.mp4$ [NC]
+RewriteCond %{HTTP_REFERER} !^https?://([a-z0-9-]+\.)*(minelabzambia\.com|magnetor9000\.com|gpz7000africa\.com)(:[0-9]+)?/ [NC]
+RewriteRule ^ - [F,L]
+
+# Code folders are never opened directly.
+RewriteRule ^(inc|lang|pages)(/|$) - [F,L]
+RewriteRule ^config\.local\.php$ - [F,L]
+
+# Admin and API scripts are real files; everything else goes to the front controller.
+RewriteRule ^admin/?$ admin/index.php [L]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml application/xml text/plain
+</IfModule>
+
+# Files with a version number in their address (?v=...) never change: phones keep them for a year.
+<IfModule mod_headers.c>
+<FilesMatch "\.(css|js|woff2|svg|webp|jpg|jpeg|png)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType video/mp4 "access plus 30 days"
+</IfModule>

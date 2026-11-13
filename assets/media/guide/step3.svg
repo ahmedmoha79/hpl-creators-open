@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" font-family="Arial,Helvetica,sans-serif"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2a20"/><stop offset="1" stop-color="#1e140f"/></linearGradient></defs><rect width="360" height="240" rx="18" fill="url(#bg)"/><circle cx="300" cy="30" r="90" fill="#e2ad7b" opacity=".08"/><rect x="120" y="22" width="120" height="206" rx="18" fill="#0d0907" stroke="#e2ad7b" stroke-opacity=".6" stroke-width="2"/><rect x="128" y="34" width="104" height="186" rx="11" fill="#f6f0e6"/><rect x="164" y="27" width="32" height="5" rx="2.5" fill="#2a1c15"/>
+<rect x="128" y="34" width="104" height="22" fill="#1e140f"/><text x="136" y="49" font-family="Georgia,serif" font-size="11" fill="#e2c27a">HPL</text>
+<text x="136" y="74" font-size="9" font-weight="800" fill="#22160f">Submit your page</text>
+<text x="136" y="92" font-size="7" font-weight="700" fill="#6e5949">PLATFORM</text><rect x="136" y="96" width="88" height="16" rx="4" fill="#fffaf3" stroke="#e4d4bf"/><text x="141" y="107" font-size="7.5" fill="#22160f">TikTok</text>
+<text x="136" y="126" font-size="7" font-weight="700" fill="#6e5949">PAGE LINK</text><rect x="136" y="130" width="88" height="16" rx="4" fill="#fffaf3" stroke="#c58a52" stroke-width="1.5"/><text x="141" y="141" font-size="7" fill="#22160f">tiktok.com/@hpl.you</text>
+<rect x="136" y="156" width="88" height="20" rx="10" fill="#e2ad7b"/><text x="180" y="169.5" text-anchor="middle" font-size="8.5" font-weight="800" fill="#1e140f">Submit page</text>
+<text x="180" y="196" text-anchor="middle" font-size="7.5" fill="#166534">Reviewed within 24h</text>
+<text x="24" y="44" font-size="13" font-weight="800" fill="#e2ad7b">STEP 3</text><text x="24" y="64" font-size="12" fill="#d8c7b2">Paste &amp;</text><text x="24" y="80" font-size="12" fill="#d8c7b2">submit</text>
+</svg>

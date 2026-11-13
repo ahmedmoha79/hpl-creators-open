@@ -1,0 +1,40 @@
+/* Sign-up page (2026-11-12): phone first, one column, the promise of the ad, real payouts, a 4-box form. */
+.su { max-width: 480px; margin: 0 auto; padding: 22px 16px 40px; display: flex; flex-direction: column; gap: 16px; }
+.su-top h1 { font-size: 1.55rem; line-height: 1.2; letter-spacing: -.01em; margin: 0 0 8px; color: var(--hpl-espresso, #1e140f); }
+.su-top p { margin: 0; color: var(--muted, #6e5949); line-height: 1.5; }
+
+/* Real payouts: a small note at the bottom of the screen, shown for a few seconds at a time, hidden while typing. */
+.su-toast { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; max-width: 380px; margin: 0 auto;
+    display: grid; grid-template-columns: 36px 1fr auto; gap: 10px; align-items: center;
+    background: #fff; color: var(--hpl-espresso, #1e140f); border: 1px solid var(--line, #e4d4bf); border-radius: 14px;
+    padding: 10px 6px 10px 10px; box-shadow: 0 6px 24px rgba(30, 20, 15, .16);
+    opacity: 0; transform: translateY(24px) scale(.96); transition: opacity .22s ease, transform .35s cubic-bezier(.3,1.4,.5,1); }
+.su-toast.is-on { opacity: 1; transform: none; }
+.su-toast[hidden] { display: none; }
+.su-toast__face { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 800;
+    background: #e6f5ec; color: #1d7a4a; }
+.su-toast__txt { font-size: .9rem; line-height: 1.3; min-width: 0; }
+.su-toast__txt b { color: #1d7a4a; white-space: nowrap; }
+.su-toast__txt small { display: block; color: var(--muted, #6e5949); font-size: .78rem; }
+.su-toast__x { border: 0; background: transparent; color: var(--muted, #6e5949); font-size: 1.3rem; width: 40px; height: 40px; cursor: pointer; }
+@media (min-width: 700px) { .su-toast { left: 20px; right: auto; bottom: 20px; } }
+
+.su-card { background: #fff; border: 1px solid var(--line, #e4d4bf); border-radius: 18px; padding: 18px 16px; }
+.su-card h2 { font-size: 1.2rem; margin: 0 0 12px; }
+.su-note { background: #fff6e9; border: 1px solid #f0d6b3; border-radius: 12px; padding: 10px 12px; font-size: .92rem; margin: 0 0 12px; }
+.su-form .field { margin-bottom: 12px; }
+.su-form .input { font-size: 16px; min-height: 48px; } /* 16px: phones do not zoom in while typing */
+.su-pw { position: relative; }
+.su-pw .input { padding-right: 72px; }
+.su-pw__show { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: 0; background: transparent; color: var(--hpl-caramel-deep, #c58a52);
+    font-weight: 700; padding: 10px 12px; min-height: 44px; cursor: pointer; }
+.su-go { min-height: 52px; font-size: 1.05rem; margin-top: 4px; }
+.su-small { text-align: center; font-size: .9rem; margin: 12px 0 0; }
+
+.su-steps { margin: 0; padding: 0 0 0 20px; color: var(--muted, #6e5949); font-size: .92rem; line-height: 1.5; }
+.su-steps li { margin-bottom: 4px; }
+.su-steps strong { color: var(--hpl-espresso, #1e140f); }
+
+@media (prefers-reduced-motion: reduce) {
+    .su-toast { transition: none; transform: none; }
+}
